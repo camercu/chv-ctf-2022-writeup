@@ -51,19 +51,19 @@ For the physical stuff, I started looking at service
 At first I got back a bunch of "nopes" on those scans, but then I ran them after starting a Diagnostic Control Session.
 
 ```bash
-# Send Diag control prior to scan. 
+# Send Diag control prior to scan.
 cansend vcan0 '620#0210020000000000'
 
 # enumerate subfunctions for 2F - INPUT_OUTPUT_CONTROL_BY_IDENTIFIER
-./cc.py dcm subfunc 0x620 0x520 0x2f 2 3 
-------------------- 
-CARING CARIBOU v0.3 
-------------------- 
-Loaded module 'dcm' 
-Starting DCM sub-function discovery 
-Probing sub-function 0x2f data ['ff', 'ff'] (found: 8) 
-Done: Scan finished 
-Found sub-functions for service 0x2f (INPUT_OUTPUT_CONTROL_BY_IDENTIFIER): 
+./cc.py dcm subfunc 0x620 0x520 0x2f 2 3
+-------------------
+CARING CARIBOU v0.3
+-------------------
+Loaded module 'dcm'
+Starting DCM sub-function discovery
+Probing sub-function 0x2f data ['ff', 'ff'] (found: 8)
+Done: Scan finished
+Found sub-functions for service 0x2f (INPUT_OUTPUT_CONTROL_BY_IDENTIFIER):
 Sub-function 02 0d
 Sub-function 02 a0
 Sub-function 02 a1
