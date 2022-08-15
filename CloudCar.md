@@ -93,7 +93,7 @@ With [Cloud Car](https://cloudcar.canbushack.com)
 
 Using CAN Messaging, open the **Passenger Door**.
 
-I tried the same things as the other door, but no luck. I assume the methods the other team used for solving the other door works for this one, too.
+I tried the same things as the other door, but no luck. The techniques the other team used for solving previous challenge work for this one, too.
 
 
 ## Engine Memory - 50
@@ -139,7 +139,7 @@ With [Cloud Car](https://cloudcar.canbushack.com)
 
 Using CAN Diagnostic Messaging, **Activate the Headlights**.
 
-I tried all the same tricks I used for the open door commands, but nothing worked.
+I tried all the same tricks I used for the open door commands, but nothing worked. See [Kylle Door Open - 50](#Kylle%20Door%20Open%20-%2050) for a hint at the solution.
 
 
 ## Cluster Session Control - 50
