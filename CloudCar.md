@@ -470,6 +470,20 @@ $ python3 cc.py -i vcan0 uds ecu_reset 0x7e0 0x7e8
 # 0x7f1 -> 0x7f9
 ```
 
+`@fearfulspoon` on Discord sent me his solution:
+
+```bash
+# Start Diagnostic Control Session with the BCM
+cansend vcan0 '620#0210020000000000'
+
+# Send Reset ECU (0x03 = softReset)
+cansend vcan0 '620#0211030000000000'
+
+# also attempted 0x01 (hardReset) and 0x02 (keyOffOnReset)
+# first, but received errors.
+```
+
+So I was definitely missing the "start diagnostic session" piece. Knowing which ArbID corresponded to the BCM was partly just guesswork, but it is the same one that was used for actuating the doors, which makes sense (that's a typical BCM function).
 
 ## Rollback - 200
 
