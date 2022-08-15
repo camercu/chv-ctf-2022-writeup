@@ -18,7 +18,17 @@ Make the buzzer play the first 7 notes of the Super Mario theme
 Make some LEDs sync with the Super Mario. Make it flashy!
 
 ## Solution
-This code solves both challenges (plays Mario theme, with LEDs in eyes flashing to the music).
+First, backup the old firmware so you can restore it later.
+
+```bash
+./picotool save -a ~/Desktop/chv-badge.uf2
+```
+
+Then, install the [MicroPython image](https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2) for the Raspberry Pi Pico. Just download, then drag and drop into the volume that mounts when you connect to the badge over USB in BOOTSEL mode (hold down BOOTSEL button when plugging in the badge).
+
+I used the [Pico Go](https://marketplace.visualstudio.com/items?itemName=Drincann.pico-go) extension for VSCode to develop on the board, which I learned about from reading [this blog](https://community.element14.com/members-area/personalblogs/b/andy-clark-s-blog/posts/vscode-and-micropython-for-the-pi-pico). This made it easy to test as I went (just click "Run" to see how things are working).
+
+My code solves both challenges (plays Mario theme, with LEDs in eyes flashing to the music).
 
 ```python
 #!/usr/bin/env python
