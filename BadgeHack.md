@@ -2,12 +2,12 @@
 Hacking the CHV Badge (Raspberry Pi Pico)
 
 ## Resources
-[Getting Started With Pico](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
-[Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
-[Pico MicroPython SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
-[RP2040 Microcontroller](https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html)
-[How To: Buzzer Music with Pico](https://www.tomshardware.com/how-to/buzzer-music-raspberry-pi-pico)
-[Raspberry Pi Buzzer Player (many songs)](https://github.com/gumslone/raspi_buzzer_player)
+- [Getting Started With Pico](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+- [Pico C/C++ SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-c-sdk.pdf)
+- [Pico MicroPython SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
+- [RP2040 Microcontroller](https://www.raspberrypi.com/documentation/microcontrollers/rp2040.html)
+- [How To: Buzzer Music with Pico](https://www.tomshardware.com/how-to/buzzer-music-raspberry-pi-pico)
+- [Raspberry Pi Buzzer Player (many songs)](https://github.com/gumslone/raspi_buzzer_player)
 
 ## 7 note Mario - 200
 
