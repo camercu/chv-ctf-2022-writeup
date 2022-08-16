@@ -120,9 +120,6 @@ Browsing 00:19:5D:37:FD:EA ...
  Profile Descriptor List:
    "Serial Port" (0x1101)
      Version: 0x0100
-
-# Alternate method?
-$ gatttool -b 00:19:5D:37:FD:EA --primary
 ```
 
 UUID: `88888888-1111-0000-1111-888888888888`
@@ -367,6 +364,21 @@ The BT Address is `00:19:5D:37:FD:EA`, so the last two bytes are `FD:EA`. Invert
 ```bash
 $ python -c 'print(f"{(~0xFDEA) & 0xFFFF:04x}")'
 0215
+
+# To pair to the CTF device (not required to solve challenge)
+$ sudo bluetoothctl
+[bluetooth]> scan  # put nearby devices into bluetoothctl database
+[bluetooth]> pair 00:19:5D:37:FD:EA  # enter PIN when prompted
+# optionally, trust the device for easier furture connections
+[bluetooth]> trust 00:19:5D:37:FD:EA
+
+# maybe try this to pair with pin?
+# http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux
+# rfcomm connect /dev/rfcomm0 00:11:22:33:44:55 1 &
+
+# Additionally, it is good practice to enable secure simple pairing and enable page and inquiry scan with the following commands:
+# hciconfig hci0 sspmode 1
+# hciconfig hci0 piscan
 ```
 
 Pairing pin: `0215`
@@ -379,20 +391,6 @@ Well done, you’ve found the first key! Now use it to unlock the second key.
 ```bash
 # first install the necessary python library to interact with bluetooth
 $ pip install PyBluez
-
-# Pair to the CTF device
-$ sudo bluetoothctl
-[bluetooth]> pair 00:19:5D:37:FD:EA
-# optionally, trust the device for easier furture connections
-[bluetooth]> trust 00:19:5D:37:FD:EA
-
-# maybe try this to pair with pin?
-# http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux
-# rfcomm connect /dev/rfcomm0 00:11:22:33:44:55 1 &
-
-# Additionally, it is good practice to enable secure simple pairing and enable page and inquiry scan with the following commands:
-# hciconfig hci0 sspmode 1
-# hciconfig hci0 piscan
 ```
 
 Then create the following file to send the data to the appropriate service.
@@ -407,3 +405,6 @@ btsock.send(b"Gungnir\x00")
 print(btsock.recv(2049))
 btsock.close()
 ```
+
+Run the script, and it will spit out a message with the key.
+
